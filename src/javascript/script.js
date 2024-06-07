@@ -3,7 +3,7 @@ document.getElementById('open_btn').addEventListener('click', function () {
 });
 
 function DescubraGame() {
-    window.location.href = '../games/loading1.html'
+    window.location.href = '../games/loading1'
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
