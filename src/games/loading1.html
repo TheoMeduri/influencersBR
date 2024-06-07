@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influencers BR</title>
+    <style>
+        body {
+    font: 13px/20px "Lucida Grande", Tahoma, Verdana, sans-serif;
+    color: #404040;
+    background: #e1e1e1;
+    display: flex; /* Adicionando para centralizar o conteúdo */
+    justify-content: center; /* Centralizando horizontalmente */
+    align-items: center; /* Centralizando verticalmente */
+    height: 100vh; /* Para ocupar toda a altura da tela */
+    overflow: hidden;
+}
+
+body.dark-mode {
+    background-color: #393939;
+}
+
+.container {
+    margin:  auto; /* Centralizando o container */
+    width: 400px;
+    text-align: center;
+}
+
+.container .progress {
+    margin: 0 auto;
+    width: 400px;
+}
+
+.progress {
+    padding: 4px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(29, 29, 29, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar {
+    box-shadow: 0 0 30px #4e46e5fc;
+    height: 16px;
+    border-radius: 4px;
+    background-color: #4e46e5; /* Nova cor de fundo */
+    -webkit-transition: 0.4s linear;
+    -moz-transition: 0.4s linear;
+    -o-transition: 0.4s linear;
+    transition: 0.4s linear;
+    -webkit-transition-property: width, background-color;
+    -moz-transition-property: width, background-color;
+    -o-transition-property: width, background-color;
+    transition-property: width, background-color;
+    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    color: #4e46e5fc;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Preparando</h1>
+        <div class="progress">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+    </div>
+
+    <script>
+        // Função para iniciar o progresso automático e redirecionar após o carregamento
+        function iniciarProgresso() {
+    var progressBar = document.getElementById('progress-bar');
+    var progresso = 0;
+    var intervalo = setInterval(function() {
+        if (progresso >= 100) {
+            clearInterval(intervalo);
+            // Redireciona para outra página após o carregamento
+            window.location.href = 'descubra.html';
+        } else {
+            progresso += 1;
+            progressBar.style.width = progresso + '%';
+        }
+    }, 150); // Ajuste aqui a velocidade do progresso (em milissegundos)
+}
+
+
+        // Inicia o progresso automático quando a página é carregada
+        window.onload = function() {
+            iniciarProgresso();
+        };
+    </script>
+    <script src="../javascript/script.js"></script>
+</body>
+</html>
