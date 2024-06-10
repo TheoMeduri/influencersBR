@@ -55,7 +55,7 @@
               <i class="fas fa-lock"></i>
               <input type="password" id="sign-up-password" placeholder="Password" required />
             </div>
-            <input type="submit" class="btn" value="Cadastrar" />
+            <input type="submit" class="btn" value="Cadastrar" id="sign-up-submit" />
             <p class="social-text">Nos siga nas redes sociais.</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -107,7 +107,63 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
 
-    <!-- Your own app.js -->
+    <script>
+      // Captura o formulário de cadastro
+      const signUpForm = document.getElementById('sign-up-form');
+
+      // Captura os campos de entrada
+      const signUpUsername = document.getElementById('sign-up-username');
+      const signUpEmail = document.getElementById('sign-up-email');
+      const signUpPassword = document.getElementById('sign-up-password');
+
+      // Captura o botão de envio do formulário de cadastro
+      const signUpSubmit = document.getElementById('sign-up-submit');
+
+      // Adiciona um ouvinte de evento para o envio do formulário de cadastro
+      signUpForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede o comportamento padrão do formulário
+
+        // Salva os dados de cadastro no localStorage
+        localStorage.setItem('username', signUpUsername.value);
+        localStorage.setItem('email', signUpEmail.value);
+        localStorage.setItem('password', signUpPassword.value);
+
+        // Limpa os campos de entrada após o cadastro
+        signUpUsername.value = '';
+        signUpEmail.value = '';
+        signUpPassword.value = '';
+
+        // Opcional: Adicione uma mensagem de sucesso ou redirecionamento para a página de login
+      });
+
+      const signInForm = document.getElementById('sign-in-form');
+
+      // Captura os campos de entrada
+      const signInEmail = document.getElementById('sign-in-email');
+      const signInPassword = document.getElementById('sign-in-password');
+
+      // Adiciona um ouvinte de evento para o envio do formulário de login
+      signInForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede o comportamento padrão do formulário
+
+        // Obtém os dados de login do localStorage
+        const storedEmail = localStorage.getItem('email');
+        const storedPassword = localStorage.getItem('password');
+
+        // Obtém os dados inseridos pelo usuário
+        const enteredEmail = signInEmail.value;
+        const enteredPassword = signInPassword.value;
+
+        // Verifica se os dados de login inseridos correspondem aos dados salvos localmente
+        if (enteredEmail === storedEmail && enteredPassword === storedPassword) {
+          // Redireciona para a página index.html
+          window.location.href = './';
+        } else {
+          // Exibe uma mensagem de erro (opcional)
+          alert('Credenciais inválidas. Por favor, tente novamente.');
+        }
+      });
+    </script>
     <script src="./public/app.js"></script>
   </body>
 </html>
