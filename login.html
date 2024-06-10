@@ -175,6 +175,14 @@
           alert('Credenciais inválidas. Por favor, tente novamente.');
         }
       });
+
+      // Função para executar quando o formulário de login for enviado
+        function login() {
+            // Lógica de autenticação e verificação de login bem-sucedido aqui
+            
+            // Se o login for bem-sucedido, armazena um indicador de login no localStorage
+            localStorage.setItem('isLogged', 'true');
+        }
     </script>
   </body>
 </html>
