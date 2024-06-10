@@ -77,6 +77,12 @@
                         </span>
                     </a>
                 </li>
+                <li class="side-item">
+                    <a id="join" href="login">
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        <span class="item-description">Entrar</span>
+                    </a>
+                </li>
             </ul>
     
             <button id="open_btn">
@@ -97,7 +103,7 @@
     <main>
         <h1 id="title">Início</h1>
 
-       <div class="contents">
+        <div class="contents">
             <div class="content1"><h2 id="title">Quanto um influencer ganha?</h2> <br><br> <h3 id="description">Os ganhos de um influencer podem variar com base em diversos fatores, como o engajamento do público, as marcas com as quais colaboram e o tipo de conteúdo. Alguns influencers chegam a ganhar centenas de dólares por postagem.
                 Além disso, os influencers podem ganhar dinheiro de outras formas, como parcerias de afiliados, publicidade em vídeos, produtos da própria marca, patrocínios, entre outros.</h3> <br><br></div>
             <div class="content1"><h2 id="title">Influencers também mentem</h2> <br><br> <h3 id="description">Atualmente, é muito frequente vermos influencers que fazem vídeos sobre sua vida, vendem de produtos, entre outros. Porém, mesmo com essa transparência, muitos deles mentem, manipulando a verdade para sustentar sua imagem e garantir o engajamento de seus seguidores.
@@ -119,5 +125,39 @@
         </div>
     </main>
     <script src="src/javascript/script.js"></script>
+    <script>
+        // Recupera o nome de usuário armazenado localmente
+        const storedUsername = localStorage.getItem('username');
+
+        // Lista de nomes de usuários administradores
+        const administradores = ["Theo Meduri", "Madu Caetano", "Maria Benfica", "Sardinha",]; // Adicione outros nomes de administradores conforme necessário
+
+        // Verifica se o nome de usuário está armazenado localmente e não é nulo
+        if (storedUsername) {
+            // Atualiza o conteúdo do elemento 'user_infos' com base no nome de usuário armazenado
+            const userInfosElement = document.getElementById('user_infos');
+            if (administradores.includes(storedUsername)) {
+                // Se o nome de usuário estiver na lista de administradores, exibe "Administrador(a)"
+                userInfosElement.innerHTML = `
+                    <span class="item-description">
+                        ${storedUsername}
+                    </span>
+                    <span class="item-description">
+                        Administrador(a)
+                    </span>
+                `;
+            } else {
+                // Caso contrário, exibe "Membro"
+                userInfosElement.innerHTML = `
+                    <span class="item-description">
+                        ${storedUsername}
+                    </span>
+                    <span class="item-description">
+                        Membro
+                    </span>
+                `;
+            }
+        }
+    </script>
 </body>
 </html>
