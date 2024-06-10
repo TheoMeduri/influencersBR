@@ -116,5 +116,52 @@
         </div>
     </main>
     <script src="../javascript/script.js"></script>
+    <script>
+        // Recupera o nome de usuário armazenado localmente
+        const storedUsername = localStorage.getItem('username');
+
+        // Lista de nomes de usuários administradores
+        const administradores = ["Theo Meduri", "Madu Caetano", "Maria Benfica", "Sardinha","Marcelly Neris", "Gi Burato", "Sah Anchieta"]; // Adicione outros nomes de administradores conforme necessário
+
+        // Verifica se o nome de usuário está armazenado localmente e não é nulo
+        if (storedUsername) {
+            // Atualiza o conteúdo do elemento 'user_infos' com base no nome de usuário armazenado
+            const userInfosElement = document.getElementById('user_infos');
+            if (administradores.includes(storedUsername)) {
+                // Se o nome de usuário estiver na lista de administradores, exibe "Administrador(a)"
+                userInfosElement.innerHTML = `
+                    <span class="item-description">
+                        ${storedUsername}
+                    </span>
+                    <span class="item-description">
+                        Administrador(a)
+                    </span>
+                `;
+            } else {
+                // Caso contrário, exibe "Membro"
+                userInfosElement.innerHTML = `
+                    <span class="item-description">
+                        ${storedUsername}
+                    </span>
+                    <span class="item-description">
+                        Web Visitante
+                    </span>
+                `;
+            }
+        }
+
+        // Verifica se o usuário está logado ao carregar a página
+        window.onload = function() {
+            const loginButton = document.getElementById('loginButton');
+            
+            // Verifica se há um indicador de login no localStorage
+            const isLogged = localStorage.getItem('isLogged');
+
+            // Se o usuário estiver logado, oculta o botão de entrar
+            if (isLogged === 'true') {
+                loginButton.style.display = 'none';
+            }
+        };
+    </script>
 </body>
 </html>
