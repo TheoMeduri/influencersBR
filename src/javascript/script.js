@@ -30,4 +30,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
+// Verifica se o usuário está logado ao carregar a página
+        window.onload = function() {
+            const loginButton = document.getElementById('loginButton');
+            
+            // Verifica se há um indicador de login no localStorage
+            const isLogged = localStorage.getItem('isLogged');
 
+            // Se o usuário estiver logado, oculta o botão de entrar
+            if (isLogged === 'true') {
+                loginButton.style.display = 'none';
+            }
+        };
