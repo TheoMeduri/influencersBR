@@ -104,6 +104,31 @@ main {
     color: #0a0a0a;
 }
 
+.side-item a#join{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background-color: #4f46e5;
+    box-shadow: 0 0 15px #4f46e5;
+    padding: 15px;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+.side-item a#join:hover{
+    background-color: #3f38ca;
+}
+
+.side-item a#join i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
 .side-item.active a {
     color: #e3e9f7;
 }
