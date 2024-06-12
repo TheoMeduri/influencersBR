@@ -3,7 +3,7 @@ document.getElementById('open_btn').addEventListener('click', function () {
 });
 
 function DescubraGame() {
-    window.location.href = '../games/loading1'
+    window.location.href = '../games/loading1.html'
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -30,15 +30,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-// Verifica se o usuário está logado ao carregar a página
-        window.onload = function() {
-            const loginButton = document.getElementById('loginButton');
-            
-            // Verifica se há um indicador de login no localStorage
-            const isLogged = localStorage.getItem('isLogged');
+function EntrarConta() {
+    window.location.href = '../../login.html'
+}
 
-            // Se o usuário estiver logado, oculta o botão de entrar
-            if (isLogged === 'true') {
-                loginButton.style.display = 'none';
-            }
-        };
+function EntrarContaIndex() {
+    window.location.href = 'login.html'
+}
+
+
