@@ -155,9 +155,15 @@ main {
     align-items: center;
     border-radius: 8px;
     text-align: start;
-    cursor: not-allowed;
+    cursor: pointer;
     background-color: transparent;
     transition: .3s;
+}
+
+#logout_btn:hover{
+    background-color: #4f46e5;
+    color: #fff;
+    box-shadow: 0 0 25px #4f46e5;
 }
 
 #open_btn {
@@ -225,6 +231,8 @@ main {
     margin-left: 20px;
     width: 100%;
     height: 100%;
+    font-weight: 200;
+    box-shadow: 0 0 20px #a0a0a098;
 }
 
 .content2 {
@@ -233,11 +241,14 @@ main {
     height: 600px;
     border-radius: 5px;
     background-color: #ffffff;
-    margin-top: -190px;
+    margin-top: -40px;
     margin-left: 20px;
     width: 100%;
     height: 100%;
+    box-shadow: 0 0 20px #a0a0a098;
 }
+
+
 
 .game-contents {
     display: flex;
@@ -285,26 +296,9 @@ body.dark-mode .game-content1 button:hover {
     color: #ffffff;
 }
 
-body.dark-mode .game-content1 i {
-    margin-top: 20px;
-    font-size: 25px;
-    margin-left: 320px;
-    color: #4f46e5;
-    text-shadow: 0 0 5px#4f46e5;
-}
-
-body.dark-mode .dm-contents {
-    display: flex;
-    gap: 20px;
-}
 
 body.dark-mode .dm-content1 {
-    width: 500px;
-    height: 500px;
-    border-radius: 5px;
     background-color: #393939;
-    margin-top: 30px;
-    margin-left: 20px;
 }
 
 body.dark-mode.fs-contents {
@@ -313,12 +307,7 @@ body.dark-mode.fs-contents {
 }
 
 body.dark-mode .fs-content1 {
-    width: 500px;
-    height: 330px;
-    border-radius: 5px;
     background-color: #393939;
-    margin-top: 30px;
-    margin-left: 20px;
 }
 
 #title-movie {
@@ -326,27 +315,13 @@ body.dark-mode .fs-content1 {
     font-size: 22px;
 }
 
-body.dark-mode .nt-contents {
-    display: flex;
-    gap: 20px;
-}
 
 body.dark-mode .nt-content1 {
-    width: 500px;
-    height: 330px;
-    border-radius: 5px;
     background-color: #393939;
-    margin-top: 30px;
-    margin-left: 20px;
 }
 
 body.dark-mode .nt-content2 {
-    width: 500px;
-    height: 50px;
-    border-radius: 5px;
     background-color: #393939;
-    margin-top: 30px;
-    margin-left: 20px;
 }
 
 #procurando {
@@ -360,47 +335,23 @@ body.dark-mode .conf-contents {
 }
 
 body.dark-mode .conf-content1 {
-    width: 500px;
-    height: 330px;
-    border-radius: 5px;
     background-color: #393939;
-    margin-top: 30px;
-    margin-left: 20px;
 }
 
 body.dark-mode .conf-content2 {
-    width: 450px;
-    height: 330px;
-    border-radius: 5px;
     background-color: #393939;
-    margin-top: 30px;
-    margin-left: 20px;
 }
 
 body.dark-mode #title-nt {
-    font-size: 22px;
-    margin-top: -37px;
-    margin-left: 20px;
-    color: #4f46e5;
     text-shadow: 0 0 5px#161616;
 }
 
 body.dark-mode .nt-content1 i {
-    padding: 10px;
     background-color: #393939;
-    box-shadow: 0 0 10px 1px #1e1e1e;
-    border-radius: 10px;
-    margin-left: 430px;
-    font-size: 25px;
-    color: #4f46e5;
-    margin-top: 25px;
-    text-shadow: 0 0 5px#161616;
 }
 
 body.dark-mode .nt-content1 h3 {
-    font-size: 15px;
-    justify-content: inherit;
-    margin-left: 20px;
+   font-weight: 600;
 }
 
 body.dark-mode {
@@ -413,8 +364,10 @@ body.dark-mode #sidebar {
     box-shadow: 8px 0px 3px #242424;
 }
 
-body.dark-mode .conf-content1, body.dark-mode .conf-content2 {
+body.dark-mode .content1, body.dark-mode .content2 {
     background-color: #393939;
+    box-shadow: 0 0 20px#1e1e1e;
+    font-weight: 600;
 }
 
 body.dark-mode #sidebar_content {
@@ -563,18 +516,10 @@ body.dark-mode .content1, body.dark-mode .content2{
 }
 
 body.dark-mode .game-content1 {
-    width: 500px;
-    height: 300px;
-    border-radius: 5px;
     background-color: #393939;
-    margin-top: 30px;
-    margin-left: 20px;
 }
 
 body.dark-mode .game-content1 h2#title-game {
-    margin-top: -33px;
-    margin-left: 20px;
-    color: #4f46e5;
     text-shadow: 0 0 5px#2e2e2e;
 }
 
@@ -774,4 +719,107 @@ h2#title{
 h3#description{
     justify-content: initial;
     font-size: 16px;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    .contents {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dm-contents{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    
+
+    .content1, .content2, .game-content1, .dm-content1, .fs-content1, .nt-content1, .nt-content2, .conf-content1, .conf-content2 {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .content2{ 
+        margin-top: 70px;
+    }
+
+    .game-content1 h2{
+     font-size: 23px;
+    }
+
+    .game-content1 i {
+        margin-left: 285px;
+        font-size: 23px;
+    }
+
+    .game-content1 h3#description-game {
+        font-size: 15px;
+    }
+
+    body.dark-mode .fs-contents {
+        background-color: #444444;
+    }
+
+    .fs-contents {
+        background-color: #f6f6f6;
+        padding: 10px 10px 10px 10px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .fs-content1 {
+        width: 300px;
+        height: 200px;
+    }
+
+    .nt-contents {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nt-content1 h2#title-nt {
+        margin-top: 15px;
+        font-size: 20px;
+    }
+
+    .nt-content1 h3 {
+        font-size: 14px;
+        margin-top: 0px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .nt-content1 i {
+        display: none;
+    }
+
+    .conf-contents {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .conf-content1 h3 {
+        font-size: 15px;
+        margin-top: -20px;
+    }
+
+    .conf-content1 h2 {
+        font-size: 20px;
+    }
+
+    .conf-content1 button {
+        margin-top: -10px;
+    }
+
 }
